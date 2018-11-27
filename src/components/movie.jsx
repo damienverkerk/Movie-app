@@ -1,24 +1,24 @@
 import React, { Component } from "react";
 
 class Movie extends Component {
-  state = {
-    movie: "Creed"
-  };
   render() {
+    console.log(this.props);
     return (
-      <div>
-        <h2>
-          <span className={this.handleClassName()}>{this.state.movie}</span>
-        </h2>
+      <div className="card col-sm-2">
+        <img
+          src={this.props.image}
+          alt={this.props.alt}
+          className="card-img-top"
+        />
+        <div className="card-body">
+          <span className="card-text">
+            <h1>{this.props.name}</h1>
+            <p>Currently there are {this.props.tickets} tickets left</p>
+          </span>
+        </div>
       </div>
     );
   }
-  handleIncrement = () => {};
-
-  handleClassName = () => {
-    const classname = "badge badge-warning m-2";
-    return classname;
-  };
 }
 
 export default Movie;
